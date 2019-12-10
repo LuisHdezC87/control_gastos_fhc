@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 1
+  amount: 
+  contact_id: 1
+  notes: MyString
+  date: 2019-12-08 14:26:35
+
+two:
+  project_id: 1
+  amount: 
+  contact_id: 1
+  notes: MyString
+  date: 2019-12-08 14:26:35
