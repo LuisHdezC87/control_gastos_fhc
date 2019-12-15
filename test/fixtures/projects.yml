@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  total: 
+  init_date: 
+  final_date: 
+  last_update: 2019-06-24 20:18:24
+
+two:
+  name: 
+  total: 
+  init_date: 
+  final_date: 
+  last_update: 2019-06-24 20:18:24
