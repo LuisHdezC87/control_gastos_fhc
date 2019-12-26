@@ -1,4 +1,4 @@
-// Place all the styles related to the projects controller here.
+// Place all the styles related to the incomes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .view-content {
@@ -13,13 +13,11 @@
   padding-bottom: 45px;
 }
 
-.table-projects-index {
+.table-incomes-index {
   padding-left: 100px;
-  text-align: right;
 
   th {
     font-size: 14pt;
-    text-align: center;
     font-weight: bold;
     border-right: solid black 1px;
     padding: 2px 8px 2px 8px;

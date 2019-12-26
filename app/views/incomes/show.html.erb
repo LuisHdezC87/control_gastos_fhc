@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @income.project.name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @income.amount %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @income.contact.full_name %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @income.notes %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @income.date.strftime('%d/%m/%Y') %>
+</p>
+
+<%= link_to 'Edit', edit_income_path(@income) %> |
+<%= link_to 'Back', incomes_path %>

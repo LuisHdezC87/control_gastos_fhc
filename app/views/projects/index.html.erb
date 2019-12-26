@@ -11,7 +11,8 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Total</th>
+          <th>Total Expenses</th>
+          <th>Total Incomes</th>
           <th>Init date</th>
           <th>Final date</th>
           <th>Last update</th>
@@ -24,7 +25,8 @@
           <tr>
             <td><%= project.name %></td>
             <td><%= project.total %></td>
-            <td><%= project.init_date %></td>
+            <td><%= project.total_incomes %></td>
+            <td><%= project.init_date.strftime('%d/%m/%Y') %></td>
             <td><%= project.final_date %></td>
             <td><%= project.last_update %></td>
             <td><%= link_to 'Show', project %></td>
