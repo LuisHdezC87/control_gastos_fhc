@@ -15,6 +15,8 @@ class IncomesController < ApplicationController
   # GET /incomes/new
   def new
     @income = Income.new
+    @allowed_projects = Project.all
+    @allowed_project_contacts = Contact.all
   end
 
   # GET /incomes/1/edit
@@ -69,6 +71,19 @@ class IncomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def income_params
-      params.require(:income).permit(:project_id, :amount, :contact_id, :notes, :date)
+      params.require(:income).permit(:project_id, :amount, :contact_id, :notes, :date,
+                                     'date(1i)', 'date(2i)', 'date(3i)')
+      {
+        project_id: params[:income][:project_id],
+        date: get_date(params[:income]),
+        amount: params[:income][:amount],
+        contact_id: params[:income][:contact_id],
+        notes: params[:income][:notes]
+      }
     end
+
+  def get_date(params)
+    Date.civil(params['date(1i)'].to_i, params['date(2i)'].to_i, params['date(3i)'].to_i)
+  end
+
 end
