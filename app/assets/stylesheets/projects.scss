@@ -2,13 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .view-content {
-  padding-left: 12%;
+  padding-left: 10%;
   padding-top: 3%;
+  font-size: 16pt;
 }
 
 .title {
   font-family: Arial;
-  font-size: 16pt;
+  font-size: 22pt;
   font-weight: bold;
   padding-bottom: 45px;
 }
@@ -16,12 +17,78 @@
 .table-projects-index {
   padding-left: 100px;
   text-align: right;
+  padding-bottom: 100px;
+
+  td {
+    padding: 12px;
+    font-size: 16pt;
+  }
 
   th {
-    font-size: 14pt;
+    font-size: 20pt;
     text-align: center;
     font-weight: bold;
     border-right: solid black 1px;
     padding: 2px 8px 2px 8px;
+  }
+}
+
+.project-data-container {
+  width: 2000px;
+  margin: auto;
+}
+
+.project-info-section {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: darkcyan;
+  font-size: 18pt;
+  padding-bottom: 100px;
+  p {
+    font-size: 18pt;
+    padding: 12px 0 0 25px;
+  }
+}
+
+.project-data-section {
+  float: right;
+  width: 70%;
+  height: 100%;
+  font-size: 18pt;
+  p {
+    font-size: 18pt;
+    padding: 20px;
+  }
+}
+
+.bills-data {
+  float: left;
+  padding: 20px;
+  padding-left: 10%;
+  width: 100%;
+}
+
+.incomes-data {
+  float: left;
+  padding: 20px;
+  padding-left: 10%;
+  width: 100%;
+}
+
+.project-data-section-field {
+  float: left;
+  padding: 32px;
+}
+
+.info-section-bottons {
+  color: whitesmoke;
+  float: right;
+  padding-right: 15%;
+
+  a {
+    color: #BBBBBB;
+    font-size: 22px;
+    font-weight: bold;
   }
 }
