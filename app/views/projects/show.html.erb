@@ -1,34 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="project-data-container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+  <div class="project-info-section">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Total Expenses:</strong>
-  <%= @project.total %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @project.name %>
+    </p>
 
-<p>
-  <strong>Total Incomes:</strong>
-  <%= @project.total_incomes %>
-</p>
+    <p>
+      <strong>Total Expenses:</strong>
+      <%= @project.total %>
+    </p>
 
-<p>
-  <strong>Init date:</strong>
-  <%= @project.init_date %>
-</p>
+    <p>
+      <strong>Total Incomes:</strong>
+      <%= @project.total_incomes %>
+    </p>
 
-<p>
-  <strong>Final date:</strong>
-  <%= @project.final_date %>
-</p>
+    <p>
+      <strong>Init date:</strong>
+      <%= @project.init_date.strftime('%d/%m/%Y') %>
+    </p>
 
-<p>
-  <strong>Last update:</strong>
-  <%= @project.last_update %>
-</p>
+    <p>
+      <strong>Final date:</strong>
+      <%= @project.final_date.try(:strftime, ('%d/%m/%Y')) %>
+    </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+    <p>
+      <strong>Last update:</strong>
+      <%= @project.last_update.try(:strftime, ('%d/%m/%Y')) %>
+    </p>
+
+    <div class="info-section-bottons">
+      <%= link_to 'Edit', edit_project_path(@project) %> |
+      <%= link_to 'Back', projects_path %>
+    </div>
+  </div>
+
+  <div class="project-data-section">
+    <div class="bills-data">
+      <div class="project-data-section-field">
+        Bills total amount: <%= (@bills_total_amount || 0).to_s %>
+      </div>
+      <div class="project-data-section-field">
+        <%= link_to "Bills: #{(@bills_count|| 0).to_s}", project_bills_path(@project) %>
+      </div>
+    </div>
+
+    <div class="incomes-data">
+      <div class="project-data-section-field">
+        Incomes total amount: <%= (@project.total_incomes || 0).to_s %>
+      </div>
+      <div class="project-data-section-field">
+
+        <%= link_to "Incomes: #{number_of_incomes(@project)}", project_incomes_path(@project) %>
+      </div>
+    </div>
+  </div>
+
+</div>

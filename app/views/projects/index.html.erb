@@ -23,7 +23,7 @@
       <tbody>
         <% @projects.each do |project| %>
           <tr>
-            <td><%= project.name %></td>
+            <td><%= link_to project.name, project %></td>
             <td><%= project.total %></td>
             <td><%= project.total_incomes %></td>
             <td><%= project.init_date.strftime('%d/%m/%Y') %></td>
