@@ -1,29 +1,68 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @bill.project_id %>
-</p>
+<div class="bill-context">
 
-<p>
-  <strong>Total amount:</strong>
-  <%= @bill.total_amount %>
-</p>
+  <div class="bill-field">
+    <p>
+      <strong>Total amount:</strong>
+      <%= @bill.total_amount %>
+    </p>
+  </div>
 
-<p>
-  <strong>Purchase date:</strong>
-  <%= @bill.purchase_date %>
-</p>
+  <div class="bill-field">
+    <p>
+      <strong>Purchase date:</strong>
+      <%= @bill.purchase_date %>
+    </p>
+  </div>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @bill.contact_id %>
-</p>
+  <div class="bill-field">
+    <p>
+      <strong>Contact:</strong>
+      <%= @bill.contact.full_name %>
+    </p>
+  </div>
 
-<p>
-  <strong>Bill type:</strong>
-  <%= @bill.bill_type_id %>
-</p>
+  <div class="bill-field">
+    <p>
+      <strong>Bill type:</strong>
+      <%= @bill.bill_type.name %>
+    </p>
+  </div>
 
-<%= link_to 'Edit', edit_project_bill_path(@project, @bill) %> |
-<%= link_to 'Back', project_bills_path %>
+  <div class="bill-field-buttons">
+    <%= link_to 'Edit', edit_project_bill_path(@project, @bill) %> |
+    <%= link_to 'Back', project_bills_path %>
+  </div>
+</div>
+<div class="bill-rows-context">
+  <div class="bill-row-table">
+    <table>
+      <thead>
+      <tr>
+        <th>Product</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @bill_rows.each do |bill_row| %>
+        <tr>
+          <td><%= get_product_name(bill_row) %></td>
+          <td><%= bill_row.amount %></td>
+          <td><%= bill_row.price %></td>
+          <td><%= link_to 'Edit', edit_project_bill_bill_row_path(@project, @bill, bill_row) %></td>
+          <td><%= link_to 'Destroy', project_bill_bill_row_path(@project, @bill, bill_row), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bill-row-form">
+    <%= render 'bill_rows/form', bill_row: @bill_row %>
+  </div>
+
+</div>
