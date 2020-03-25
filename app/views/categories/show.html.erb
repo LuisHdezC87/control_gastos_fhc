@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="view-content">
+
+  <div class="title">Category <%= @category.id %></div>
+  <p>
+    <strong>Project:</strong>
+    <%= @category.project.name %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @category.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_project_category_path(@category) %> |
+  <%= link_to 'Back', project_categories_path %>
+</div>
