@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+
+
   root 'projects#index'
 
-  resources :projects
+  resources :projects do
+    resources :categories do
+      resources :products
+    end
+  end
   resources :contacts
   resources :incomes
 

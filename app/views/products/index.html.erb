@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="view-content">
+  <div class="title">
+    <h1>Products for <%= @category.name %>'s Category </h1>
+  </div>
+
+  <div class="table-products-index">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Price</th>
+          <th>Name</th>
+          <th>Notes</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.price %></td>
+            <td><%= product.name %></td>
+            <td><%= product.notes %></td>
+            <td><%= link_to 'Show', project_category_product_path(@project, @category, product) %></td>
+            <td><%= link_to 'Edit', edit_project_category_product_path(@project, @category, product) %></td>
+            <td><%= link_to 'Destroy', project_category_product_path(@project, @category, product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+
+  <%= link_to 'New Product', new_project_category_product_path %>
+</div>

@@ -1,0 +1,29 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.view-content {
+  padding-left: 12%;
+  padding-top: 3%;
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.title {
+  font-family: Arial;
+  font-size: 16pt;
+  font-weight: bold;
+  padding-bottom: 45px;
+}
+
+.table-categories-index {
+  padding-left: 120px;
+
+  th {
+    font-size: 14pt;
+    font-weight: bold;
+    border-right: solid black 1px;
+    padding: 2px 48px 2px 48px;
+  }
+}
