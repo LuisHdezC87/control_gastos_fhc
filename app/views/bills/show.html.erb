@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @bill.project_id %>
+</p>
+
+<p>
+  <strong>Total amount:</strong>
+  <%= @bill.total_amount %>
+</p>
+
+<p>
+  <strong>Purchase date:</strong>
+  <%= @bill.purchase_date %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @bill.contact_id %>
+</p>
+
+<p>
+  <strong>Bill type:</strong>
+  <%= @bill.bill_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_project_bill_path(@project, @bill) %> |
+<%= link_to 'Back', project_bills_path %>
