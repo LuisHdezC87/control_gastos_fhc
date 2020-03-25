@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <% if show_menu?(@project) %>
+      this should be shown only when a project is selected
+    <% end %>
     <%= yield %>
   </body>
 </html>

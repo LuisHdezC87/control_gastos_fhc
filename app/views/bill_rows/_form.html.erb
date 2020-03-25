@@ -1,0 +1,33 @@
+<%= form_with(model: @bill_row, url: [@project, @bill, @bill_row], local: true) do |form| %>
+  <% if bill_row.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bill_row.errors.count, "error") %> prohibited this bill_row from being saved:</h2>
+
+      <ul>
+      <% bill_row.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.number_field :product_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
