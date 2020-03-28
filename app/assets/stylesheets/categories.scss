@@ -14,16 +14,21 @@
   font-family: Arial;
   font-size: 16pt;
   font-weight: bold;
-  padding-bottom: 45px;
+  padding-bottom: 35px;
 }
 
 .table-categories-index {
   padding-left: 120px;
 
   th {
-    font-size: 14pt;
+    font-size: 16pt;
     font-weight: bold;
     border-right: solid black 1px;
-    padding: 2px 48px 2px 48px;
+    padding: 2px 68px 6px 68px;
+  }
+
+  td {
+    font-size: 14pt;
+    margin-top: 3px;
   }
 }
