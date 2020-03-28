@@ -1,0 +1,40 @@
+<%= form_with(model: @bill_row, url: [@project, @bill, @bill_row], local: true) do |form| %>
+  <% if bill_row.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bill_row.errors.count, "error") %> prohibited this bill_row from being saved:</h2>
+
+      <ul>
+      <% bill_row.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  .<div class="bill-row-field">
+    <div class="field">
+      <%= form.label :product_id %>
+      <%= form.collection_select( :product_id, @allowed_products, :id, :name) %>
+    </div>
+  </div>
+
+  <div class="bill-row-field">
+    <div class="field">
+      <%= form.label :amount %>
+      <%= form.text_field :amount %>
+    </div>
+  </div>
+
+  <div class="bill-row-field">
+    <div class="field">
+      <%= form.label :price %>
+      <%= form.number_field :price %>
+    </div>
+  </div>
+
+  <div class="bill-row-field">
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>
+

@@ -1,14 +1,17 @@
 // Place all the styles related to the bills controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .view-content {
   padding-left: 12%;
   padding-top: 3%;
-
-  p {
-    font-size: 20px;
-  }
 }
+
+.view-content p {
+  font-size: 20px;
+}
+
 
 .title {
   font-family: Arial;
@@ -17,22 +20,97 @@
   padding-bottom: 45px;
 }
 
+
 .table-bills-index {
   padding-left: 120px;
-
-  th {
-    font-size: 14pt;
-    font-weight: bold;
-    border-right: solid black 1px;
-    padding: 2px 48px 2px 48px;
-  }
 }
+
+.table-bills-index th {
+  font-size: 14pt;
+  font-weight: bold;
+  border-right: solid black 1px;
+  padding: 2px 48px 2px 48px;
+}
+
 
 .bill-field {
   float: left;
   padding: 16px;
 }
 
+.bill-field p {
+  font-size: 16pt;
+}
+
+
+.bill-field-buttons {
+  float: left;
+  margin-left: 12px;
+  margin-top: 15px;
+  padding: 26px;
+  background-color: #666666;
+}
+
+.bill-field-buttons p {
+  font-size: 16pt;
+}
+
+.bill-field-buttons a {
+  color: white;
+}
+
+.bill-field-buttons a:visited {
+  color: white;
+}
+
+
 .bill-context {
-  margin: auto;
+  font-size: 16pt;
+  width: 80%;
+  border: 1px solid;
+  overflow: hidden;
+  background-color: cadetblue;
+}
+
+
+.bill-rows-context {
+  float: left;
+  top: 180px;
+  padding: 30px 65px 30px 0px;
+  font-size: 16px;
+  background-color: #BBBBBB;
+  width: 76.5%;
+}
+
+.bill-rows-context th {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 65px 8px 45px;
+}
+
+.bill-rows-context tr td {
+  text-align: center;
+  border-bottom: solid black 1px;
+  padding-top: 8px;
+  padding-left: 15px;
+}
+
+
+.bill-row-form {
+  padding: 50px 0 20px 10px;
+}
+
+
+.bill-row-table {
+  overflow: hidden;
+}
+
+
+.bill-row-field {
+  float: left;
+  padding: 16px;
+}
+
+.bill-row-field p {
+  font-size: 16pt;
 }

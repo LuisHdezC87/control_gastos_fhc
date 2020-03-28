@@ -11,6 +11,10 @@ class BillsController < ApplicationController
   # GET /bills/1
   # GET /bills/1.json
   def show
+    @bill_rows = @bill.bill_rows
+    @bill_row = BillRow.new
+    @bill_row.amount = 1
+    @allowed_products = Product.where(category: @project.categories).order(:name, :category_id)
   end
 
   # GET /bills/new
@@ -20,6 +24,7 @@ class BillsController < ApplicationController
 
   # GET /bills/1/edit
   def edit
+    @allowed_products = Product.where(category: @project.categories).order(:name, :category_id)
   end
 
   # POST /bills
