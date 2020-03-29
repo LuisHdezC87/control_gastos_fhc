@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @bills_count = @project.bills.count
+    @bills_total_amount = @project.bills.calculate(:sum, :total_amount)
   end
 
   # GET /projects/new
@@ -20,7 +21,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @bills_total_amount = @project.bills.calculate(:sum, :amount)
+    @bills_total_amount = @project.bills.calculate(:sum, :total_amount)
     @bills_count = @project.bills.count
   end
 

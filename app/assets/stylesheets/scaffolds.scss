@@ -115,4 +115,14 @@ label {
   font-family: "Abyssinica SIL";
   font-size: 14pt;
   color: darkcyan;
+
+  a {
+    color: darkcyan;
+    font-weight: bold;
+  }
+
+  a:visited {
+    color: darkcyan;
+    font-weight: bold;
+  }
 }
