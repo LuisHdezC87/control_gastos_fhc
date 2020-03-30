@@ -27,14 +27,15 @@
             <td><%= income.contact_id %></td>
             <td><%= income.notes %></td>
             <td><%= income.date %></td>
-            <td><%= link_to 'Show', income %></td>
-            <td><%= link_to 'Edit', edit_income_path(income) %></td>
-            <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', project_income_path(@project, income) %></td>
+            <td><%= link_to 'Edit', edit_project_income_path(@project, income) %></td>
+            <td><%= link_to 'Destroy', project_income_path(@project, income), method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
+</div>
 <br>
 
-<%= link_to 'New Income', new_income_path %>
+<%= link_to 'New Income', new_project_income_path(@project) %>

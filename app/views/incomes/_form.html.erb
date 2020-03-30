@@ -1,4 +1,4 @@
-<%= form_with(model: income, local: true) do |form| %>
+<%= form_with(model: @income, url: [@project, @income], local: true) do |form| %>
   <% if income.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(income.errors.count, "error") %> prohibited this income from being saved:</h2>

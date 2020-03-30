@@ -2,5 +2,5 @@
 
 <%= render 'form', income: @income %>
 
-<%= link_to 'Show', @income %> |
-<%= link_to 'Back', incomes_path %>
+<%= link_to 'Show', project_income_path(@income) %> |
+<%= link_to 'Back', project_incomes_path(@project) %>
