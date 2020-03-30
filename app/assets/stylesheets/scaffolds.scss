@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
+  margin-left: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -81,4 +81,48 @@ div {
 
 label {
   display: block;
+}
+
+.main-menu {
+  width: 79%;
+  overflow: hidden;
+  padding-right: 120px;
+  margin-bottom: 50px;
+  padding: 12px;
+  background-color: aliceblue;
+
+  a {
+    color: darkblue;
+    font-weight: bold;
+  }
+
+  a:visited {
+    color: darkblue;
+    font-weight: bold;
+  }
+}
+
+.main-menu-item {
+  float: right;
+  background-color: #DADADA;
+  padding: 10px;
+}
+
+.main-menu-item-project {
+  float: left;
+  padding: 10px;
+  font-weight: bold;
+  font-family: "Abyssinica SIL";
+  font-size: 14pt;
+  color: darkcyan;
+
+  a {
+    color: darkcyan;
+    font-weight: bold;
+  }
+
+  a:visited {
+    color: darkcyan;
+    font-weight: bold;
+  }
 }

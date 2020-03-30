@@ -14,16 +14,91 @@
   font-family: Arial;
   font-size: 16pt;
   font-weight: bold;
-  padding-bottom: 45px;
+  padding-bottom: 35px;
 }
 
 .table-categories-index {
   padding-left: 120px;
 
   th {
-    font-size: 14pt;
+    font-size: 16pt;
     font-weight: bold;
     border-right: solid black 1px;
-    padding: 2px 48px 2px 48px;
+    padding: 2px 68px 6px 68px;
   }
+
+  td {
+    font-size: 14pt;
+    margin-top: 3px;
+  }
+}
+
+.category-show-section {
+  width: 100%;
+  margin: auto;
+}
+
+.category-info-section {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: darkcyan;
+  font-size: 18pt;
+  padding-bottom: 2%;
+  p {
+    font-size: 18pt;
+    padding: 12px 0 0 25px;
+  }
+}
+
+.category-product-section {
+  float: right;
+  width: 70%;
+  height: 100%;
+  font-size: 18pt;
+  p {
+    font-size: 18pt;
+    padding: 2%;
+  }
+  td {
+    text-align: center;
+  }
+}
+
+.category-product-section-title {
+  padding: 1%;
+}
+
+.category-product-form {
+  padding: 2%;
+  padding-top: 5%;
+  padding-left: 7%;
+}
+
+.product-field {
+  float: left;
+  padding: 1%;
+}
+
+.product-field p {
+  font-size: 16pt;
+}
+
+.category_form {
+  width: 20%;
+  padding: 2%;
+  padding-left: 3%;
+  background-color: #DADADA;
+}
+
+.category-form-field-back {
+  width: 1.5%;
+  padding: 1%;
+  margin-left: 25%;
+  background-color: darkcyan;
+  color: white;
+  font-weight: bold;
+
+  a { color: white; }
+  a:visited {color: white;}
 }

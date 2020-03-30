@@ -11,10 +11,11 @@
     <table>
       <thead>
         <tr>
-          <th>Purchase date</th>
           <th>Contact</th>
-          <th>Bill type</th>
           <th>Total amount</th>
+          <th>Bill type</th>
+          <th>Categories</th>
+          <th>Purchase date</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -22,10 +23,11 @@
       <tbody>
         <% @bills.each do |bill| %>
           <tr>
-            <td><%= bill.purchase_date %></td>
-            <td><%= bill.contact.full_name %></td>
-            <td><%= bill.bill_type.name %></td>
-            <td><%= bill.total_amount || 0 %></td>
+            <td><%= link_to bill.contact.full_name, project_bill_path(@project, bill) %></td>
+            <td><%= link_to (bill.total_amount || 0), project_bill_path(@project, bill) %></td>
+            <td><%= link_to bill.bill_type.name, project_bill_path(@project, bill) %></td>
+            <td><%= link_to get_bill_categories(bill), project_bill_path(@project, bill) %>
+            <td><%= link_to bill.purchase_date, project_bill_path(@project, bill) %></td>
             <td><%= link_to 'Show', project_bill_path(@project, bill) %></td>
             <td><%= link_to 'Edit', edit_project_bill_path(@project, bill) %></td>
             <td><%= link_to 'Destroy', project_bill_path(@project, bill), method: :delete, data: { confirm: 'Are you sure?' } %></td>

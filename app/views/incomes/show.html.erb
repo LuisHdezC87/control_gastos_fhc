@@ -25,5 +25,5 @@
   <%= @income.date.strftime('%d/%m/%Y') %>
 </p>
 
-<%= link_to 'Edit', edit_income_path(@income) %> |
-<%= link_to 'Back', incomes_path %>
+<%= link_to 'Edit', edit_project_income_path(@project, @income) %> |
+<%= link_to 'Back', project_incomes_path(@project) %>

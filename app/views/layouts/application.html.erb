@@ -11,7 +11,7 @@
 
   <body>
     <% if show_menu?(@project) %>
-      this should be shown only when a project is selected
+      <%= render 'layouts/main_menu', project: @project %>
     <% end %>
     <%= yield %>
   </body>
