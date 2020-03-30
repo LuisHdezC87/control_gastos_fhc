@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   root 'projects#index'
 
   resources :projects do
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
     resources :incomes
 
     resources :bills do
+      resources :payments
       resources :bill_rows
     end
   end

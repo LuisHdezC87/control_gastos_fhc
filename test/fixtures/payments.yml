@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bill_id: MyString
+  integer,: MyString
+  payment_amount: MyString
+  decimal,: MyString
+  payment_date: MyString
+  date,: MyString
+  contact_id: MyString
+  integer: MyString
+
+two:
+  bill_id: MyString
+  integer,: MyString
+  payment_amount: MyString
+  decimal,: MyString
+  payment_date: MyString
+  date,: MyString
+  contact_id: MyString
+  integer: MyString

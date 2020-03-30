@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_31_013747) do
+ActiveRecord::Schema.define(version: 2020_03_30_034926) do
 
   create_table "bill_rows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.decimal "price", precision: 10
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_12_31_013747) do
     t.decimal "amount", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bill_id"
   end
 
   create_table "bill_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_12_31_013747) do
     t.integer "bill_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "paid"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -62,6 +64,16 @@ ActiveRecord::Schema.define(version: 2019_12_31_013747) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_id"
+  end
+
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "bill_id"
+    t.datetime "payment_date"
+    t.decimal "payment_amount", precision: 10
+    t.integer "contact_id"
+    t.integer "payment_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
