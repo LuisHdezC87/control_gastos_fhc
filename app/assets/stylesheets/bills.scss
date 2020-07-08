@@ -12,14 +12,13 @@
   font-size: 20px;
 }
 
-
-.title {
+.title-bills-index {
+  padding: 4% 0% 3% 10%;
   font-family: Arial;
-  font-size: 16pt;
+  font-size: 26pt;
   font-weight: bold;
-  padding-bottom: 45px;
+  padding-bottom: 3%;
 }
-
 
 .table-bills-index {
   padding-left: 120px;
@@ -130,7 +129,6 @@
   padding-top: 35px;
   width: 5%;
   font-weight: bold;
-
 }
 
 .bill-summary-month {
@@ -140,8 +138,10 @@
   border: #BBBBBB 2px solid;
   padding: 15px;
   padding-left: 20px;
-  .title {
+  .title-month {
     text-align: center;
+    font-size: 16pt;
+    padding-bottom: 8px;
     a:link {
       color: darkblue;
       text-decoration: none;
@@ -160,6 +160,9 @@
 }
 
 .bill-summary-next_month {
-  float: right;
+  float: left;
+  padding-left: 25px;
+  padding-top: 35px;
   width: 5%;
+  font-weight: bold;
 }

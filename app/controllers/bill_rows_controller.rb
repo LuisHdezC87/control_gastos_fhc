@@ -77,10 +77,10 @@ class BillRowsController < ApplicationController
 
     def set_bill_total_amount
       @bill.total_amount = @bill.bill_rows.calculate(:sum, :price)
+      @bill.save
       @project.total = @project.bills.calculate(:sum, :total_amount)
       @project.last_update = Date.today
       @project.save
-      @bill.save
     end
 
     # Use callbacks to share common setup or constraints between actions.

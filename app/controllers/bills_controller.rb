@@ -39,6 +39,7 @@ class BillsController < ApplicationController
 
     respond_to do |format|
       if @bill.save
+        set_project_total
         format.html { redirect_to project_bill_path(@project, @bill), notice: 'Bill was successfully created.' }
         format.json { render :show, status: :created, location: @bill }
       else
@@ -53,6 +54,7 @@ class BillsController < ApplicationController
   def update
     respond_to do |format|
       if @bill.update(bill_params)
+        set_project_total
         format.html { redirect_to project_bill_path(@project, @bill), notice: 'Bill was successfully updated.' }
         format.json { render :show, status: :ok, location: @bill }
       else
@@ -66,6 +68,7 @@ class BillsController < ApplicationController
   # DELETE /bills/1.json
   def destroy
     @bill.destroy
+    set_project_total
     respond_to do |format|
       format.html { redirect_to project_bills_url, notice: 'Bill was successfully destroyed.' }
       format.json { head :no_content }
@@ -114,4 +117,10 @@ class BillsController < ApplicationController
     def get_date(params)
       Date.civil(params['purchase_date(1i)'].to_i, params['purchase_date(2i)'].to_i, params['purchase_date(3i)'].to_i)
     end
+
+  def set_project_total
+    @project.total = @project.bills.calculate(:sum, :total_amount)
+    @project.save
+  end
+
 end

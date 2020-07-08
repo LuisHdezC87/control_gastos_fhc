@@ -21,4 +21,8 @@ module BillsHelper
     "#{month.month}-#{month.year}"
   end
 
+  def get_current_month_text(current_month)
+    Date.new(current_month.last.to_i, current_month.first.to_i).strftime("%B %Y")
+  end
+
 end
