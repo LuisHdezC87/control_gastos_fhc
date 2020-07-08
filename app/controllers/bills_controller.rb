@@ -2,10 +2,15 @@ class BillsController < ApplicationController
   before_action :set_project
   before_action :set_bill, only: [:show, :edit, :update, :destroy]
 
+
   # GET /bills
   # GET /bills.json
   def index
-    @bills = @project.bills
+    @months_to_show = 4
+    @current_month = params[:current_month].try(:split, '-') || [Date.today.month, Date.today.year]
+    month = Date.new(@current_month.last.to_i, @current_month.first.to_i)
+    @bills = Bill.where({project: @project, purchase_date: month.beginning_of_month..month.end_of_month})
+    @bills_by_month = get_bills_by_month
   end
 
   # GET /bills/1
@@ -67,6 +72,19 @@ class BillsController < ApplicationController
     end
   end
 
+  def get_bills_by_month
+    number_of_months = @months_to_show
+    data = []
+    while number_of_months > 0
+      month = Date.new(@current_month.last.to_i, @current_month.first.to_i).prev_month(number_of_months)
+      bills = Bill.where({project: @project, purchase_date: month.beginning_of_month..month.end_of_month})
+      total = bills.calculate(:sum, :total_amount)
+      data << {month: month, bills_count: bills.count, total: total}
+      number_of_months = number_of_months - 1
+    end
+    data
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bill
@@ -83,7 +101,7 @@ class BillsController < ApplicationController
     def bill_params
       params.require(:bill).permit(
           :project_id, :total_amount, :purchase_date, :contact_id, :bill_type_id,
-          'purchase_date(1i)', 'purchase_date(2i)', 'purchase_date(3i)'
+          'purchase_date(1i)', 'purchase_date(2i)', 'purchase_date(3i)', :current_month
       )
       {
          project_id: @project.id,

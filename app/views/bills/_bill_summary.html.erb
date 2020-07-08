@@ -1,0 +1,17 @@
+<div class="bill-summary">
+  <div class="bill-summary-prev_month">
+    << Atras
+  </div>
+  <% bills_by_month.each do |bill_month| %>
+    <div class="bill-summary-month">
+      <div class="title"><%= link_to bill_month[:month].strftime("%B %Y"), project_bills_path(@project, current_month: get_link_month(bill_month[:month])) %></div>
+      Facturas: <%= bill_month[:bills_count] %><br />
+      Total Facturas: <%= bill_month[:total] %>
+    </div>
+  <% end %>
+  <% if show_next_month_option(current_month) %>
+    <div class="bill-summary-next_month">
+      Siguiente >>
+    </div>
+  <% end %>
+</div>
