@@ -7,10 +7,19 @@ class BillsController < ApplicationController
   # GET /bills.json
   def index
     @months_to_show = 4
-    @current_month = params[:current_month].try(:split, '-') || [Date.today.month, Date.today.year]
+    @current_month = get_current_month(params[:current_month], params[:prev_link], params[:next_link])
     month = Date.new(@current_month.last.to_i, @current_month.first.to_i)
     @bills = Bill.where({project: @project, purchase_date: month.beginning_of_month..month.end_of_month})
     @bills_by_month = get_bills_by_month
+  end
+
+  def get_current_month(current_month_param, prev_link_param, next_link_param)
+    month = current_month_param.present? ? current_month_param.try(:split, '-') : [Date.today.month, Date.today.year]
+    month = Date.new(month.last.to_i, month.first.to_i)
+    if prev_link_param.present? || next_link_param.present?
+      month = prev_link_param.present? ? month.prev_month(@months_to_show) : month.next_month(@months_to_show)
+    end
+    [month.month, month.year]
   end
 
   # GET /bills/1

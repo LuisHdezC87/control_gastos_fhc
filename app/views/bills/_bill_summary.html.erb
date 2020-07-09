@@ -1,6 +1,6 @@
 <div class="bill-summary">
   <div class="bill-summary-prev_month">
-    << Atras
+    <%= link_to '<< Atras', project_bills_path(@project, current_month: get_prev_next_link_month(current_month), prev_link: true) %>
   </div>
   <% bills_by_month.each do |bill_month| %>
     <div class="bill-summary-month">
@@ -11,7 +11,7 @@
   <% end %>
   <% if show_next_month_option(current_month) %>
     <div class="bill-summary-next_month">
-      Siguiente >>
+      <%= link_to 'Siguiente >>', project_bills_path(@project, current_month: get_prev_next_link_month(current_month), next_link: true) %>
     </div>
   <% end %>
 </div>
