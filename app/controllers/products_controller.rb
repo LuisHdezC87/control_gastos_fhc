@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         format.html {
-          redirect_to project_category_product_path(@project, @category, @product),
+          redirect_to project_category_path(@project, @category),
                       notice: 'Product was successfully created.'
         }
         format.json { render :show, status: :created, location: @product }
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update(product_params)
         format.html {
-          redirect_to project_category_product_path(@project, @category, @product),
+          redirect_to project_category_path(@project, @category),
                       notice: 'Product was successfully updated.'
         }
         format.json { render :show, status: :ok, location: @product }

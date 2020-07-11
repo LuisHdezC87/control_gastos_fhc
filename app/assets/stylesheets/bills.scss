@@ -12,17 +12,19 @@
   font-size: 20px;
 }
 
-
-.title {
+.title-bills-index {
+  padding: 4% 0% 3% 10%;
   font-family: Arial;
-  font-size: 16pt;
+  font-size: 26pt;
   font-weight: bold;
-  padding-bottom: 45px;
+  padding-bottom: 3%;
 }
-
 
 .table-bills-index {
   padding-left: 120px;
+  td {
+    text-align: center;
+  }
 }
 
 .table-bills-index th {
@@ -113,4 +115,54 @@
 
 .bill-row-field p {
   font-size: 16pt;
+}
+
+.bill-summary {
+  width: 100%;
+  height: 50px;
+  color: darkblue;
+}
+
+.bill-summary-prev_month {
+  float: left;
+  padding-left: 25px;
+  padding-top: 35px;
+  width: 5%;
+  font-weight: bold;
+}
+
+.bill-summary-month {
+  float: left;
+  width: 12%;
+  background-color: #999999;
+  border: #BBBBBB 2px solid;
+  padding: 15px;
+  padding-left: 20px;
+  .title-month {
+    text-align: center;
+    font-size: 16pt;
+    padding-bottom: 8px;
+    a:link {
+      color: darkblue;
+      text-decoration: none;
+    }
+    a:visited {
+      color: darkblue;
+      text-decoration: none;
+    }
+    a:hover {
+      color: hotpink;
+    }
+    a:active {
+      color: darkblue;
+    }
+  }
+}
+
+.bill-summary-next_month {
+  float: left;
+  padding-left: 25px;
+  padding-top: 35px;
+  width: 5%;
+  font-weight: bold;
 }
