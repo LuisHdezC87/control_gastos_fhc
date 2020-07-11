@@ -1,0 +1,28 @@
+// Place all the styles related to the bills controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.devise-sign-up {
+  width: 150px;
+  padding: 10%;
+  margin: 0 auto;
+  background-color: grey;
+}
+
+.devise-sign-up-background {
+  background-image: url("constru.jpg");
+  background-color: indianred;
+  width: 100%;
+  height: 1200px ;
+}
+
+.devise-log-in-log-out-menu {
+  float: right;
+  text-align: center;
+  width: 5%;
+  padding: 10px;
+  background-color: cadetblue;
+  a:link {
+    font-size: 16pt;
+  }
+}
