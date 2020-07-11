@@ -1,4 +1,5 @@
 class BillTypesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_project
   before_action :set_bill_type, only: [:show, :edit, :update, :destroy]
 
